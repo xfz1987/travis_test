@@ -1,0 +1,6 @@
+language: node_js
+node_js:
+- 8.9.4
+after_success:
+- ssh xfz 
+'cd /root/travis_test && git pull && pm2 start pm2.json'
