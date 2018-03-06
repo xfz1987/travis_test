@@ -1,21 +1,6 @@
 # 自动化部署
 **Linux(Centos7 环境下)**
-1.安装ruby, 下载ruby1.9+源码(xxx.tar.gz)
-```
-cd downloads
-wget http:rubyxxxx.tar.gz
-tar -zxvf rubyxxxx.tar.gz
-cd rubyxxx
-./configure
-make
-make install
-```
-2.安装travis
-```
-yum install gem
-gem install travis
-```
-3.安装git
+1.安装git
 ```
 1.yum install git
 2.ssh-keygen -t rsa -C "xfz@163.com" -f "test_rsa"
@@ -32,7 +17,7 @@ e.编辑config文件，在文件尾部添加以下内容，保存并关闭 vi co
 # github
 Host github.com 
 User git
-IdentityFile ~/.ssh/你自己的名字_rsa
+IdentityFile ~/.ssh/test_rsa
 Protocol 2
 Compression yes
 ServerAliveInterval 60
@@ -41,3 +26,22 @@ LogLevel INFO
 f.配置config文件的访问权限为 644  chmod 644 config
 4.git clone git@github.com:xxxx/xxx.git
 ```
+
+2.安装ruby, 下载ruby1.9+源码(xxx.tar.gz)
+```
+cd downloads
+wget http:rubyxxxx.tar.gz
+tar -zxvf rubyxxxx.tar.gz
+cd rubyxxx
+./configure
+make
+make install
+```
+
+3.安装travis
+```
+yum install gem
+gem install travis
+```
+
+4.配置travis
