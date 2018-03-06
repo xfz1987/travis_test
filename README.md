@@ -45,3 +45,6 @@ gem install travis
 ```
 
 4.配置travis
+```
+travis login
+```
