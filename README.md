@@ -44,7 +44,16 @@ yum install gem
 gem install travis
 ```
 
-4.配置travis
+4.配置nginx与部署静态页面与Node.js项目
+nginx 这里不做描述
+node pm2 start app.js --name test-server
+这里不做描述
+
+5.配置travis
+travis-ci支持公开项目和私有项目,是通过.org和.com后缀来区分的。以我的一个公开项目为例
+进入 https://travis-ci.org/ 官网，登录我的github账号
+![](readImg/1.png)
+先别关，接着往下进行其他步骤
 ```
 travis login
 ```
