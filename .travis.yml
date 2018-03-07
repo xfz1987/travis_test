@@ -1,5 +1,5 @@
 language: node_js
 node_js:
- -8.9.4
+- 8.9.4
 after_success:
 - ssh xfz "cd /home/xfz/travis_test && git pull && pm2 restart pm2.json --name test_server"
