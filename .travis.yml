@@ -6,4 +6,4 @@ after_success:
   test_server"
 before_install:
 - openssl aes-256-cbc -K $encrypted_1246a5cf2bec_key -iv $encrypted_1246a5cf2bec_iv
-  -in github_rsa.enc -out ~/.ssh/github_rsa -d
+  -in mykey_rsa.enc -out ~\/.ssh/mykey_rsa -d
