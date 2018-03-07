@@ -8,12 +8,10 @@
 3.使私钥在本地生效
 a.将私钥复制到你的home目录下的.ssh/ 路径下(如果不存在， mkdir .ssh)
 b.配置你的私钥文件访问权限 chmod 600 test_rsa
-c.ssh-add test_rsa
-若出现： Could not open a connection to your authenticationagent.
-ssh-agent bash
-ssh-add test_rsa
-d.检查你的.ssh/ 路径下是否存在config文件，如果不存在建, touch config
-e.编辑config文件，在文件尾部添加以下内容，保存并关闭 vi config
+c.eval $(ssh-agent -s) 保持ssh-agent运行 
+d.ssh-add test_rsa
+e.检查你的.ssh/ 路径下是否存在config文件，如果不存在建, touch config
+f.编辑config文件，在文件尾部添加以下内容，保存并关闭 vi config
 # github
 Host github.com 
 User git
@@ -25,6 +23,8 @@ ServerAliveCountMax 20
 LogLevel INFO
 f.配置config文件的访问权限为 644  chmod 644 config
 4.git clone git@github.com:xxxx/xxx.git
+5.如果还不行，那么 vi /etc/ssh/ssh_config
+IdentityFile ~/.ssh/test_rsa
 ```
 
 2.安装ruby, 下载ruby1.9+源码(xxx.tar.gz)
