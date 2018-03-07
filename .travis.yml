@@ -2,4 +2,4 @@ language: node_js
 node_js:
 - 8.9.4
 after_success:
-- ssh xfz "cd ~/travis_test && git pull && pm2 restart pm2.json --name test_server"
+- ssh root@192.168.137.130 "cd ~/travis_test && git pull && pm2 restart pm2.json --name test_server"
