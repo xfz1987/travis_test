@@ -3,3 +3,8 @@ node_js:
 - 8.9.4
 after_success:
 - ssh root@192.168.137.130 "cd ~/travis_test && git pull && pm2 restart pm2.json"
+before_install:
+- openssl aes-256-cbc -K $encrypted_1246a5cf2bec_key -iv $encrypted_1246a5cf2bec_iv
+  -in mykey_rsa.enc -out ~/.ssh/mykey_rsa -d
+- chmod 600 ~/.ssh/mykey_rsa
+- echo -e "Host 192.168.137.130\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
