@@ -4,7 +4,7 @@
 ```
 1.yum install git
 2.ssh-keygen -t rsa -C "xfz@163.com" -f "test_rsa"
-//生成公钥和密钥（test_rsa.public 公钥,  test_rsa 密钥, 将复制给运维人员，以便加入git服务器）
+//生成公钥和密钥（test_rsa.public 公钥,  test_rsa 密钥, 公钥给运维人员，以便加入git服务器）
 3.使私钥在本地生效
 a.将私钥复制到你的home目录下的.ssh/ 路径下(如果不存在， mkdir .ssh)
 b.配置你的私钥文件访问权限 chmod 600 test_rsa
